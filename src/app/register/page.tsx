@@ -20,7 +20,7 @@ export default function RegisterPage() {
     setError('');
 
     try {
-      const res = await fetch(`${API_BASE}/auth/register`, {
+      const res = await fetch(`${API_BASE}/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, address, password }),
@@ -81,6 +81,7 @@ export default function RegisterPage() {
               Register
             </Button>
           </form>
+
           <Button
             variant="link"
             className="mt-2 w-full text-white hover:text-blue-200"

@@ -27,7 +27,7 @@ export default function LoginPage() {
       });
 
       const data = await res.json();
-      console.log("Response:", res.status, data);
+      console.log('Response:', res.status, data);
 
       if (!res.ok) {
         setError(data.message || 'Login failed');
@@ -46,7 +46,7 @@ export default function LoginPage() {
     <div className="relative flex items-center justify-start h-screen pl-20">
       {/* Background Image */}
       <Image
-        src="/pic1.jpg" 
+        src="/pic1.jpg"
         alt="Background"
         fill
         className="object-cover"
@@ -60,27 +60,31 @@ export default function LoginPage() {
       <Card className="relative w-full max-w-sm p-6 bg-gradient-to-b from-blue-900 to-black text-white backdrop-blur-md z-10 shadow-lg">
         <CardContent>
           <h1 className="text-2xl font-bold mb-6 text-white">Login</h1>
+
           <form onSubmit={handleLogin} className="space-y-4">
-            <Input 
-              placeholder="Username" 
-              value={username} 
-              onChange={(e) => setUsername(e.target.value)} 
+            <Input
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               className="bg-black/20 text-white placeholder-white border-blue-500 focus:border-blue-300"
             />
-            <Input 
-              type="password" 
-              placeholder="Password" 
-              value={password} 
-              onChange={(e) => setPassword(e.target.value)} 
+            <Input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="bg-black/20 text-white placeholder-white border-blue-500 focus:border-blue-300"
             />
-            {error && <p className="text-red-400 text-sm"> {error} </p>}
+
+            {error && <p className="text-red-400 text-sm">{error}</p>}
+
             <Button className="w-full bg-blue-700 hover:bg-blue-600 text-white" type="submit">
               Login
             </Button>
           </form>
-          <Button 
-            variant="link" 
+
+          <Button
+            variant="link"
             className="mt-2 w-full text-white hover:text-blue-200"
             onClick={() => router.push('/register')}
           >
